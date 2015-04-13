@@ -4,7 +4,7 @@ A javascript solver of the connect-the-dots game.
 
 
 
-How it works:
+**How it works:**
 
 
 ---
