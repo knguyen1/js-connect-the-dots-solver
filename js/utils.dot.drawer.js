@@ -7,6 +7,8 @@ var pointsArray = [];
 var canvas = document.getElementById("myCanvas");
 var context = canvas.getContext("2d");
 
+canvas.onclick = drawDot;
+
 /// <summary>
 /// A custom Point class that contains x and y coordinates of clicked points.
 /// Can also calculate slope and distances between points.
@@ -36,7 +38,7 @@ function Point(x, y) { //constructor
 /// <summary>
 /// Draws the dot and call the function to store the coordinate.
 /// </summary>
-/// <param name="e">TThe click event object</param>
+/// <param name="e">The click event object</param>
 function drawDot(e) {
     var position = getMousePosition(canvas, e);
     posx = position.x;
@@ -89,5 +91,3 @@ function getUpperLeft(points) {
     }
     return top;
 }
-
-window.drawDot = drawDot;

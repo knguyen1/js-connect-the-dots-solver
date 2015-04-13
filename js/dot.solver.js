@@ -36,13 +36,6 @@ function drawPolygon(points) {
     context.closePath();
     context.stroke();
 
-    //var i;
-    //for(i = 0; i < points.length; i++)
-    //    drawLine(points[i-1], points[i]);
-    //
-    ////draw the final line
-    //drawLine(points[i-1], points[0]);
-
     /// <summary>
     /// A custom sorting delegate that sorts point1 and point 2 based on their slope
     /// formed when a "line" is drawn from itself to the "upper-left" line.
