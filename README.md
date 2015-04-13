@@ -1,6 +1,6 @@
 # js-connect-the-dots-solver
 
-A javascript solver of the connect-the-dots game.
+A javascript solver for dots generated on a canvas element.
 
 
 
