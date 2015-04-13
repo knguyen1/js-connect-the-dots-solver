@@ -9,26 +9,6 @@ $("#solve").click(
 );
 
 /// <summary>
-/// Draws a line between two points using HTMl canvas' context object functions.
-/// </summary>
-/// <param name="point1">The first point</param>
-/// <param name="point2">The second point</param>
-function drawLine(point1, point2) {
-    //check arguments for null values
-    if(!point1 || !point2)
-        return false;
-
-    //draw the lines
-    context.beginPath();
-    context.moveTo(point1.x, point1.y);
-    context.lineTo(point2.x, point2.y);
-    context.lineWidth = 3;
-    context.strokeStyle = "#F00";
-    context.stroke();
-
-}
-
-/// <summary>
 /// Draw a polygon in an array of coordinates.
 /// </summary>
 /// <param name="points">The coordinate array.</param>
@@ -46,16 +26,26 @@ function drawPolygon(points) {
     //debug
     //console.log(points);
 
-    var i;
-    for(i = 0; i < points.length; i++)
-        drawLine(points[i-1], points[i]);
+    //draw the lines
+    context.beginPath();
+    context.moveTo(points[0].x, points[0].y);
+    for(var i = 0; i < points.length; i++) {
+        context.lineTo(points[i].x, points[i].y);
+    }
+    context.strokeStyle = "#F00";
+    context.closePath();
+    context.stroke();
 
-    //draw the final line
-    drawLine(points[i-1], points[0]);
+    //var i;
+    //for(i = 0; i < points.length; i++)
+    //    drawLine(points[i-1], points[i]);
+    //
+    ////draw the final line
+    //drawLine(points[i-1], points[0]);
 
     /// <summary>
     /// A custom sorting delegate that sorts point1 and point 2 based on their slope
-    /// from the upper most point to the array of poinst
+    /// formed when a "line" is drawn from itself to the "upper-left" line.
     /// </summary>
     /// <param name="point1">The first point</param>
     /// <param name="point2">The second point</param>

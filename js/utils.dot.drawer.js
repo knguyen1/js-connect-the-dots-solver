@@ -47,7 +47,7 @@ function drawDot(e) {
 
     //draw the dot
     context.fillStyle = "#F00";
-    context.fillRect(posx, posy, 6, 6); //avoid drawing circles as it is more resource intensive
+    context.fillRect(posx-3, posy-3, 6, 6); //avoid drawing circles as it is more resource intensive
 }
 
 /// <summary>
